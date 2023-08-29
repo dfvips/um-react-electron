@@ -38,12 +38,12 @@ function createWindow() {
   })
 
   // and load the index.html of the app.
-  console.log(app.isPackaged)
-  if (!app.isPackaged) {
-    mainWindow.loadURL('http://localhost:5173')
-  } else {
-    mainWindow.loadFile(path.join(__dirname, 'renderer/index.html'))
-  }
+  // console.log(app.isPackaged)
+  // if (!app.isPackaged) {
+  //   mainWindow.loadURL('http://localhost:5173')
+  // } else {
+  mainWindow.loadFile(path.join(__dirname, 'renderer/index.html'))
+  // }
 
   mainWindow.on('closed', () => {
     // 在窗口关闭时触发before-quit事件以结束进程

@@ -20,8 +20,9 @@
 
 - 开发环境
    ```sh
-   git clone https://git.unlock-music.dev/um/um-react.git && npm install --frozen-lockfile 
+   git clone https://git.unlock-music.dev/um/um-react.git && npm install --frozen-lockfile
    cd ../ && npm install
+   npm run start / npm run dev
    npm run start / npm run dev
    ```
 - 打包

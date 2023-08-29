@@ -8,12 +8,13 @@
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint --ext .js .",
-    "dev": "cd um-react && npm run start & electron .",
-    "start": "cd um-react && npm run start & electron .",
+    "dev": "cd um-react && npm run build && cp -r ./dist ../src/renderer && cd ../ && electron .",
+    "start": "cd um-react && npm run build && cp -r ./dist ../src/renderer && cd ../ && electron .",
     "postinstall": "electron-builder install-app-deps",
-    "build:win": "cd um-react && npm run build && cd ../ && electron-builder --win --config",
-    "build:mac": "cd um-react && npm run build && cd ../ && electron-builder --mac --config",
-    "build:linux": "cd um-react && npm run build && cd ../ && electron-builder --linux --config"
+    "build": "cd um-react && npm run build && cp -r ./dist ../src/renderer && cd ../",
+    "build:win": "cd um-react && npm run build && cp -r ./dist ../src/renderer && cd ../ && electron-builder --win --config",
+    "build:mac": "cd um-react && npm run build && cp -r ./dist ../src/renderer && cd ../ && electron-builder --mac --config",
+    "build:linux": "cd um-react && npm run build && cp -r ./dist ../src/renderer && cd ../ && electron-builder --linux --config"
   },
   "dependencies": {
     "@electron-toolkit/preload": "^2.0.0",
