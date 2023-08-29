@@ -1,0 +1,3 @@
+[submodule "um-react"]
+	path = um-react
+	url = ./um-react
