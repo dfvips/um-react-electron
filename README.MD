@@ -15,12 +15,13 @@
 ## 自行构建Electron应用程序
 
 - 环境要求
-  - Linux、MacOs、Windows
+  - Linux、MacOs
   - python3、nodejs、npm
 
 - 开发环境
    ```sh
-   cd um-react && npm install --frozen-lockfile & npm install
+   cd um-react && npm install --frozen-lockfile 
+   cd ../ && npm install
    npm run start / npm run dev
    ```
 - 打包
