@@ -1,0 +1,30 @@
+{
+  "name": "um-react-electron",
+  "version": "1.0.0",
+  "description": "Unlock Music 音乐解锁 (React) Electron App",
+  "main": "./src/main.js",
+  "author": "dreamfly",
+  "homepage": "https://git.unlock-music.dev/um/um-react",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint --ext .js .",
+    "dev": "cd um-react && npm run start & electron .",
+    "start": "cd um-react && npm run start & electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "build:win": "cd um-react && npm run build && cd ../ && electron-builder --win --config",
+    "build:mac": "cd um-react && npm run build && cd ../ && electron-builder --mac --config",
+    "build:linux": "cd um-react && npm run build && cd ../ && electron-builder --linux --config"
+  },
+  "dependencies": {
+    "@electron-toolkit/preload": "^2.0.0",
+    "@electron-toolkit/utils": "^2.0.0"
+  },
+  "devDependencies": {
+    "@electron-toolkit/eslint-config": "^1.0.1",
+    "@electron-toolkit/eslint-config-prettier": "^1.0.1",
+    "electron": "^25.6.0",
+    "electron-builder": "^24.6.3",
+    "eslint": "^8.47.0",
+    "prettier": "^3.0.2"
+  }
+}

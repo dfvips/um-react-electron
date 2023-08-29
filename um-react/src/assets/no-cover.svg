@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+    <rect fill="#ddd" width="160" height="160" />
+    <text fill="#0007" font-family="sans-serif" font-size="24" font-weight="bold"
+        text-anchor="middle" letter-spacing="6"
+        dy="9.45" x="50%" y="50%"
+    >
+        暂无封面
+    </text>
+</svg>

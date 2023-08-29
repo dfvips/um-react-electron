@@ -1,0 +1,33 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: test & build
+    image: node:18.16.1-bookworm
+    commands:
+      # - git config --global --add safe.directory "/drone/src"
+      - corepack enable
+      - corepack prepare pnpm@latest --activate
+      - pnpm i --frozen-lockfile
+      - pnpm build
+    environment:
+      # 让 npm 使用淘宝源
+      npm_config_registry: https://registry.npmmirror.com
+
+  - name: publish
+    image: node:18.16.1-bookworm
+    environment:
+      DRONE_GITEA_SERVER: https://git.unlock-music.dev
+      GITEA_API_KEY:
+        from_secret: GITEA_API_KEY
+      NETLIFY_SITE_ID:
+        from_secret: NETLIFY_SITE_ID
+      NETLIFY_API_KEY:
+        from_secret: NETLIFY_API_KEY
+    commands:
+      # - git config --global --add safe.directory "/drone/src"
+      - python3 -m zipfile -c um-react.zip dist/.
+      - ./scripts/publish.sh
+      - ./scripts/deploy.sh

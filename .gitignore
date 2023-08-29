@@ -1,0 +1,43 @@
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules/
+coverage/
+dist/
+dist-ssr/
+release/**/*
+*.local
+src/renderer/**/*
+src/default/**/*
+
+# Editor directories and files
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ignore the same patterns in the "um-react" directory
+um-react/logs/
+um-react/*.log
+um-react/npm-debug.log*
+um-react/yarn-debug.log*
+um-react/yarn-error.log*
+um-react/pnpm-debug.log*
+um-react/lerna-debug.log*
+
+um-react/node_modules/
+um-react/coverage/
+um-react/dist/
+um-react/dist-ssr/
+um-react/*.local

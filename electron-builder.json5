@@ -1,0 +1,57 @@
+/**
+ * @see https://www.electron.build/configuration/configuration
+ */
+{
+  "$schema": "https://github.com/dfvips/iqiyi-parser",
+  "appId": "com.dreamfly.um",
+  "productName": "音乐解锁 React",
+  "asar": true,
+  "directories": {
+    "output": "release/${version}"
+  },
+  "asarUnpack":[
+     "resources/**"
+  ],
+  "mac": {
+    "icon": "build/icon.icns",
+    "artifactName": "${name}-${version}-osx64.${ext}",
+    "target": [
+      "dmg"
+    ],
+    "files": [
+      "!**/.vscode/*",
+      "!{.eslintignore,.eslintrc.js,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}"
+    ]
+  },
+  "compression": "maximum",
+  "win": {
+    "icon": "build/icon.ico",
+    "target": [
+      {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      },
+      {
+        "target": "7z"
+      }
+    ],
+    "artifactName": "${name}-${version}-winx64.${ext}",
+    "files": [
+      "!**/.vscode/*",
+      "!{.eslintignore,.eslintrc.js,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}"
+    ]
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": true,
+    "installerIcon": "build/icon.ico",
+    "uninstallerIcon": "build/icon.ico",
+    "uninstallDisplayName": "${name}-${version}",
+    "artifactName": "${name}-${version}-winx64-setup.${ext}",
+    "shortcutName": "${productName}"
+  }
+}
